@@ -20,6 +20,7 @@ namespace RealEstate.Models
         public virtual DbSet<Orderbooking> Orderbookings { get; set; }
         public virtual DbSet<TblLogin> TblLogins { get; set; }
         public virtual DbSet<TblProperty> TblProperties { get; set; }
+        public virtual DbSet<TblVenderProperty> TblVenderProperties { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -87,6 +88,50 @@ namespace RealEstate.Models
                 entity.Property(e => e.PropertySize).HasMaxLength(50);
 
                 entity.Property(e => e.Propertylocation).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<TblVenderProperty>(entity =>
+            {
+                entity.ToTable("TblVenderProperty");
+
+                entity.HasIndex(e => e.Email, "UQ__TblVende__A9D10534B1674876")
+                    .IsUnique();
+
+                entity.HasIndex(e => e.UserName, "UQ__TblVende__C9F28456B8950D85")
+                    .IsUnique();
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PropertyDescription)
+                    .HasMaxLength(500)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PropertyImage)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PropertyName)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PropertySize)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Propertylocation)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,0 +1,23 @@
+<div class="container">
+       
+    <a  class="text-right buttons" routerLink="/home" class="btn btn">Home</a>
+    <a  class="nav-link" routerLink="/houseregister" class="btn btn">Register House</a>
+    <a  class="nav-link" routerLink="/#" class="btn btn">Contacts</a>
+
+<div class="row">
+    <ng-container *ngFor="let product of  property | filter:searchkey:'propertylocation'">
+        <div class="card col-md-3">
+            <img src="../../assets/cards/{{product.propertyImage}}" alt="">
+            <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.propertyName}}</h4>
+            <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">With size of {{product.propertySize}} sq/ft </h6>
+            <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">Description:-{{product.propertyDescription}}</p>
+            <p><strong>Price:</strong> ${{product.propertyPrice}}</p>
+            <p><strong>Discount :- </strong> At ${{product.discount}} %</p>
+            <img src="../../assets/icons/location.png" width="20"> <span class="guarantee">{{product.propertylocation}}</span>
+            <a  class="nav-link" routerLink="order" class="btn btn-primary">Book Now...!</a>
+        </div>
+       
+    </ng-container>
+    
+</div>
+</div>
