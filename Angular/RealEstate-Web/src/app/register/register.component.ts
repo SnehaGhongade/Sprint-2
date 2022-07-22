@@ -48,5 +48,7 @@ export class RegisterComponent implements OnInit {
     },
       err => console.log(err));
   }
-
+  hasError(typeofvalidator:string,controlname:string):Boolean{
+    return this.registerUserData.formLoginGroup.controls[controlname].hasError(typeofvalidator);
+  }
 }

@@ -2,20 +2,25 @@
     <div class="container mt-9">
         <h3>REGISTRATION FORM</h3>
         <p>Write details in below fields and click submit to create your account</p>
-        <form action="" class="form">
+        <form action="" [formGroup]="registerUserData.formLoginGroup" class="form">
             <div class="mb-3 mt-3">
                 <label for="registerUsername" class="form-label">UserName</label>
+                 <p style="color: red;" [hidden]="!(hasError('required','UserNameControl'))">UserName is required</p>
                 <input type="text" class="form-control" name="registerUsername" id="registerUsername" [(ngModel)]="registerUserData.userName" required />
 
           </div>
 
             <div class="mb-3">
                 <label class="form-label" for="loginPassword">Password</label>
+                <p style="color: red;" [hidden]="!(hasError('required','PasswordControl'))">Password is required</p>
+
                 <input type="password"  class="form-control"  name="loginPassword" id="loginPassword" [(ngModel)]="registerUserData.password" required/>
 
             </div>
             <div class="mb-3">
                 <label class="form-label" for="registeremail">Email Id</label>
+                <p style="color: red;" [hidden]="!(hasError('required','EmailControl'))">Email Id is required</p>
+
                 <input type="email"  class="form-control"  name="registeremail" id="registeremail" [(ngModel)]="registerUserData.email" required/>
 
             </div>
