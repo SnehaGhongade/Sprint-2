@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   }
   registerUser() {
 
-    if(this.registerUserData.userName==''|| this.registerUserData.password=='' || this.registerUserData.email){
+    if(this.registerUserData.userName==''|| this.registerUserData.password=='' || this.registerUserData.email==''){
       this.DisplayModalPopup("Error","Please enter the username ,password and Email-ID");
       return;
     }
@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
     }
     this._auth.registerUser(userDataObject).subscribe(res => {
      this.HideSpinner();localStorage.setItem('token',res.token);
-      this._router.navigate([''])
+      this._router.navigate(['login'])
     },
       err => console.log(err));
   }
