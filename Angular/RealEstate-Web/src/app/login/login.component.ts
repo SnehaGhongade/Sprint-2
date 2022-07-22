@@ -5,8 +5,8 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
- 
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -17,22 +17,24 @@ export class LoginComponent implements OnInit {
   }
 
   LoginUser() {
-    
-    this._auth.loginUser(this.loginUserData).subscribe(res => {
-
+    var userDataObject={
+      userName:this.loginUserData.userName,
+      password:this.loginUserData.password
+    }
+    this._auth.loginUser(userDataObject).subscribe(res => {
       localStorage.setItem('token', res.token);
-     if (res.isAdmin)
-             this._router.navigate(['/admin']); 
+      if (res.isAdmin)
+        this._router.navigate(['/admin']);
 
-      else if (res.isVender)
-             this._router.navigate(['/vendor']);    
-
-        else 
+      else if(res.isVender)
+      this._router.navigate(['/vendor']) 
+       
+      else
         this._router.navigate(['/account']);
-
-
     }, err => console.log(err));
   }
-  
 
+  hasError(typeofvalidator:string,controlname:string):Boolean{
+    return this.loginUserData.formLoginGroup.controls[controlname].hasError(typeofvalidator);
+  }
 }

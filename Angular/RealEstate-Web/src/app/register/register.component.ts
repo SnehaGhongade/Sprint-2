@@ -5,21 +5,46 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html'
-  
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
 
   registerUserData: UserData = new UserData();
+  modelText:string="";
+  modelHeader:string="";
+  showSpinner:boolean=false;
   constructor(private _auth: AuthService,private _router:Router) { }
 
   ngOnInit(): void {
   }
 
+  DisplayModalPopup(modelHeader:string,modelText:string){
+    this.modelHeader=modelHeader;
+    this.modelText=modelText;
+    document.getElementById("btnLaunchModel")?.click();
+  }
+  ShowSpinner(){
+    this.showSpinner=true;
+  }
+  HideSpinner(){
+    this.showSpinner=false;
+  }
   registerUser() {
-    this._auth.registerUser(this.registerUserData).subscribe(res => {
-      localStorage.setItem('token',res.token);
-      this._router.navigate(['/#'])
+
+    if(this.registerUserData.userName==''|| this.registerUserData.password=='' || this.registerUserData.email){
+      this.DisplayModalPopup("Error","Please enter the username ,password and Email-ID");
+      return;
+    }
+    this.ShowSpinner();
+    var userDataObject={
+      userName:this.registerUserData.userName,
+      password:this.registerUserData.password,
+      email:this.registerUserData.email
+    }
+    this._auth.registerUser(userDataObject).subscribe(res => {
+     this.HideSpinner();localStorage.setItem('token',res.token);
+      this._router.navigate([''])
     },
       err => console.log(err));
   }

@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterHouseService } from '../services/register-house.service'
+import { RegisterHouseService } from '../services/register-house.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html'
-  
+    selector: 'app-admin',
+    templateUrl: './admin.component.html'
+
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private RegisterHouseService:RegisterHouseService) { }
+    constructor(private __RegisterHouseService: RegisterHouseService) { }
 
-  public house : any ; 
-   ngOnInit(): void {
+    public house: any;
+    ngOnInit(): void {
 
-    this.RegisterHouseService.getRequest().subscribe(res => this.house= res, err => console.log(err))
-  }
-
+        this.__RegisterHouseService.getRequest().subscribe(res => this.house = res, err => console.log(err))
+    }
 }

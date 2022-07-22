@@ -14,5 +14,6 @@ namespace RealEstate.Models
         public string PropertySize { get; set; }
         public string Propertylocation { get; set; }
         public int? Discount { get; set; }
+        public int? PropertyPrice { get; set; }
     }
 }

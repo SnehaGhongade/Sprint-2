@@ -24,8 +24,9 @@ export class PropertyComponent  {
       propertylocation:this.TblPropertyModel.propertylocation,
       propertyPrice:Number(this.TblPropertyModel.propertyPrice),
       discount:Number(this.TblPropertyModel.discount),
+      
  }
- this.httpc.post("https://localhost:44393/api/Property",propertydto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
+ this.httpc.post("https://localhost:44338/api/Property",propertydto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
     this.TblPropertyModel = new TblProperty();
 
 }
@@ -47,7 +48,7 @@ DeleteProperty(input: TblProperty) {
 }
 getData(){
   console.log("Hi");
-  this.httpc.get("https://localhost:44393/api/Property").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
+  this.httpc.get("https://localhost:44338/api/Property").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
 }
 GetSuccess(input:any){
   this.TblPropertyModels=input;

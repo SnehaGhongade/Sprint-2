@@ -1,5 +1,5 @@
 <table>
-    
+
     <tr>
         <td>Name of House</td>
         <td>
@@ -55,10 +55,10 @@
             <input [(ngModel)]="TblVenderPropertyModel.discount" type="text">
         </td>
     </tr>
-    
-    <input type="button" (click)="getHouse()" value="All Requests"/>
-    <input type="submit" (click)="registerHouse()" value="send Requests">
-    
+
+    <input type="button" (click)="getHouse()" value="All Requests" />
+    <input type="submit" (click)="registerHouse()" value="send Requests"/>
+
 </table>
 
 <table border="2">
@@ -66,7 +66,7 @@
         <td>Name of House</td>
         <td>Name of Vender</td>
         <td>Email-id</td>
-        <td>size of House</td>    
+        <td>size of House</td>
         <td>House Price</td>
     </tr>
     <tr *ngFor="let item of TblVenderPropertyModels">
@@ -83,6 +83,6 @@
         </td>
         <td> {{item.propertyPrice}}
         </td>
-        
+
     </tr>
 </table>
