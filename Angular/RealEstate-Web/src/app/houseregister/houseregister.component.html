@@ -21,13 +21,14 @@
     <tr>
         <td>House Description</td>
         <td>
-            <input [(ngModel)]="TblVenderPropertyModel.propertyDescription" type="text">
+            <textarea  id="exampleFormControlTextarea4"  [(ngModel)]="TblVenderPropertyModel.propertyDescription"rows="3"></textarea>
+        
         </td>
     </tr>
     <tr>
         <td>House Image Name</td>
         <td>
-            <input [(ngModel)]="TblVenderPropertyModel.propertyImage" type="text">
+            <input type="file"  #file placeholder="Choose file" [(ngModel)]="TblVenderPropertyModel.propertyImage"/>
         </td>
     </tr>
 

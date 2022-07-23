@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-houseregister',
+    styleUrls: ['./houseregister.component.css'],
+
     templateUrl: './houseregister.component.html'
 
 })
@@ -54,5 +56,8 @@ export class HouseregisterComponent {
     GetError(input: any) {
         console.log(input);
     }
+    hasError(typeofvalidator:string,controlname:string):Boolean{
+        return this.TblVenderPropertyModel.formLoginGroup.controls[controlname].hasError(typeofvalidator);
+      }
 
 }

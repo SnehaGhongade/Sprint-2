@@ -15,13 +15,16 @@
     <tr>
         <td>House Description</td>
         <td>
-            <input [(ngModel)]="TblPropertyModel.propertyDescription" type="text">
+            <textarea  id="exampleFormControlTextarea4"  [(ngModel)]="TblPropertyModel.propertyImage" rows="3"></textarea>
+
         </td>
     </tr>
     <tr>
         <td>House Image Name</td>
         <td>
-            <input [(ngModel)]="TblPropertyModel.propertyImage" type="text">
+
+            <input type="file"  #file placeholder="Choose file" [(ngModel)]="TblPropertyModel.propertyImage" />
+
         </td>
     </tr>
 
