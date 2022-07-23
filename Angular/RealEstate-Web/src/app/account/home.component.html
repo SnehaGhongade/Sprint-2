@@ -6,7 +6,7 @@
                 <div class="card-body"> -->
     <div class="container-fluid d-flex"> <br>
 
-        <ng-container *ngFor="let product of  property | filter:searchkey:'propertylocation'">
+        <ng-container *ngFor="let product of  products | filter:searchkey:'propertylocation'">
             <!-- <div class="card col-md-3"> 
                 <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
                     {{product.userName}} </h6>
@@ -42,7 +42,7 @@
                                 width="20"> <span class="guarantee">{{product.propertylocation}}</span> </div>
                     </div>
 
-                    <a class="nav-link" routerLink="/order" class="btn btn-primary">Book Now...!</a>
+                    <a class="nav-link" (click)="buy(product)" routerLink="/cart" class="btn btn-primary">Book Now...!</a>
                     <!-- <div class="text-right buttons"> <button class="btn btn-dark" routerLink="/login">Book Now</button> -->
                 </div>
             </div>

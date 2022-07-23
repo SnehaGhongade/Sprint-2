@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './account/home.component';
 import { AdminComponent } from './admin/admin.component';
+import { CartComponent } from './cart/cart.component';
 import { Home1Component } from './home1/home1.component';
 import { HouseregisterComponent } from './houseregister/houseregister.component';
 import { LoginComponent } from './login/login.component';
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: 'see-order',
     component: SseeOrderComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   },
 
 

@@ -17,6 +17,7 @@ import { HomeComponent } from './account/home.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { SseeOrderComponent } from './ssee-order/ssee-order.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     VendorComponent,
     AdminComponent,
     FilterPipe,
-    SseeOrderComponent
+    SseeOrderComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
