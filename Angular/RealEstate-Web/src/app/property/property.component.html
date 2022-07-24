@@ -1,3 +1,4 @@
+<button  class="btn-danger"routerLink="/admin">Back</button>
 
 <table class="table table-striped">
     <thead>
@@ -36,8 +37,8 @@
             </td>
             
             <td>
-                <input type="button"  [hidden]="(item.isApproved==1)?true:false" value="Add"  (click)="AddProperty(item)" value="Approve"/>
-                <label [hidden]="(item.isApproved==1)?false:true" class="btn btn-success" >Approved</label>
+                <input type="button"  [hidden]="(item.isApproved==1)?true:false" value="Add"  (click)="AddProperty(item)" class="btn btn-success"  value="Approve"/>
+                <label [hidden]="(item.isApproved==1)?false:true" >Approved</label>
             </td>
         </tr>
     

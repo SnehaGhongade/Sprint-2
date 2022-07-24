@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './account/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent1 } from './home1/home1.component';
 import { HouseregisterComponent } from './houseregister/houseregister.component';
 import { LoginComponent } from './login/login.component';
-import { OrderComponent } from './order/order.component';
 import { PropertyComponent } from './property/property.component';
 import { RegisterComponent } from './register/register.component';
 import { SseeOrderComponent } from './ssee-order/ssee-order.component';
@@ -27,11 +27,6 @@ const routes: Routes = [
     path: 'home1',
     component:HomeComponent1
   },
-
-  {
-    path: 'order',
-    component: OrderComponent
-  },
   
   {
     path: 'houseregister',
@@ -42,6 +37,11 @@ const routes: Routes = [
     path: 'vendor',
     component:VendorComponent
   },
+  {
+    path: 'checkout',
+    component:CheckoutComponent
+  },
+
 
   {
     path: 'admin',

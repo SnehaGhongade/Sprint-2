@@ -11,7 +11,7 @@
         <ng-container *ngFor="let product of  house">
             <div class="card col-md-3">
                 <p><strong>House id :- </strong> {{product.id}} </p>
-                <img src="../../assets/cards/{{product.propertyImage}}" alt="">
+                <img src="{{product.propertyImage}}" alt="">
                 <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
                     {{product.propertyName}}</h6>
                 <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">With size of
@@ -22,7 +22,6 @@
                 <p><strong>Discount </strong> At ${{product.discount}} %</p>
                 <img src="../../assets/icons/location.png" width="20"> <span
                     class="guarantee">{{product.propertylocation}}</span>
-                <p><strong>Request from </strong> {{product.userName}} </p>
             </div>
 
         </ng-container>

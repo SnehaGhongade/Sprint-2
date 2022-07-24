@@ -17,8 +17,9 @@ namespace RealEstate.Models
         {
         }
 
+        public virtual DbSet<OrderDetailTbl> OrderDetailTbls { get; set; }
+        public virtual DbSet<OrderTbl> OrderTbls { get; set; }
         public virtual DbSet<TblLogin> TblLogins { get; set; }
-        public virtual DbSet<TblOrder> TblOrders { get; set; }
         public virtual DbSet<TblProperty> TblProperties { get; set; }
         public virtual DbSet<TblVenderProperty> TblVenderProperties { get; set; }
 
@@ -34,6 +35,57 @@ namespace RealEstate.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
+            modelBuilder.Entity<OrderDetailTbl>(entity =>
+            {
+                entity.ToTable("OrderDetailTbl");
+
+                entity.Property(e => e.HouseDescription).HasMaxLength(100);
+
+                entity.Property(e => e.HouseName).HasMaxLength(100);
+
+                entity.Property(e => e.HousePrize).HasColumnType("decimal(18, 0)");
+
+                entity.Property(e => e.VendorEmail).HasMaxLength(100);
+
+                entity.Property(e => e.VendorName).HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<OrderTbl>(entity =>
+            {
+                entity.ToTable("OrderTbl");
+
+                entity.Property(e => e.Address)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("firstName");
+
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("lastName");
+
+                entity.Property(e => e.Paymentmode)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("paymentmode");
+
+                entity.Property(e => e.PhoneNo)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
 
             modelBuilder.Entity<TblLogin>(entity =>
             {
@@ -54,41 +106,6 @@ namespace RealEstate.Models
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<TblOrder>(entity =>
-            {
-                entity.HasKey(e => e.OrderId)
-                    .HasName("PK__TblOrder__C3905BCF9910615C");
-
-                entity.ToTable("TblOrder");
-
-                entity.Property(e => e.Address)
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Email)
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.FullName)
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.PropertyImage)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.UserName)
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.VenderName)
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.VendorUserName).HasMaxLength(50);
             });
 
             modelBuilder.Entity<TblProperty>(entity =>

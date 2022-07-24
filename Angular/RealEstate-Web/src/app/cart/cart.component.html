@@ -49,15 +49,17 @@
                             <button class="btn btn-danger" (click)="removeItem(item)">DELETE</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="4"></td>
-                        <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
-                        <td><button routerLink="/account" class="btn btn-primary">Shop More</button></td>
-                        <td><button class="btn btn-success" routerLink="/order" >Checkout</button></td>
-                        <td><strong>Grand Total : ${{grandTotal}}</strong></td>
-                    </tr>
+                   
                   </tbody>
+                
               </table>
+              <tr>
+                <td colspan="4"></td>
+                <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
+                <td><button routerLink="/account" class="btn btn-primary">Shop More</button></td>
+                <td><button class="btn btn-success" routerLink="/checkout" >Checkout</button></td>
+                <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+            </tr>
           </div>
       </div>
   </div>

@@ -78,20 +78,22 @@
 
     </tr>
 </table>-->
-
+<div style="text-align: center;">
+<H1>List Your Property</H1>
+</div>
 <form action="" [formGroup]="TblVenderPropertyModel.formLoginGroup"class="form">
     <div class="mb-3">
       <label for="housename" class="form-label">House Name</label>
-      <p style="color: red;" [hidden]="!(hasError('required','propertyNameControl'))">UserName is required</p>
+     <p style="color: red;" [hidden]="!(hasError('required','propertyNameControl'))">UserName is required</p>
 
-      <input type="text" class="form-control"formControlName="propertyNameControl" id="housename" [(ngModel)]="TblVenderPropertyModel.propertyName"
+      <input type="text" class="form-control" formControlName="propertyNameControl" id="housename" [(ngModel)]="TblVenderPropertyModel.propertyName"
        required>
       <div id="emailHelp" class="form-text"></div>
     </div>
 
     <div class="mb-3">
       <label for="Discription" class="form-label">House Discription</label>
-      <p style="color: red;" [hidden]="!(hasError('required','propertyDescriptionControl'))">House Discription is required</p>
+     <p style="color: red;" [hidden]="!(hasError('required','propertyDescriptionControl'))">House Description is required</p>
 
       <textarea type="text" class="form-control"formControlName="propertyDescriptionControl" id="Discription"  [(ngModel)]="TblVenderPropertyModel.propertyDescription"
        required></textarea>
@@ -106,7 +108,7 @@
 
     <div class="mb-3">
         <label for="size" class="form-label">Size</label>
-        <p style="color: red;" [hidden]="!(hasError('required','propertySizeControl'))">Size is required</p>
+       <p style="color: red;" [hidden]="!(hasError('required','propertySizeControl'))">Size is required</p>
 
         <input type="text" class="form-control" formControlName="propertySizeControl"id="size" [(ngModel)]="TblVenderPropertyModel.propertySize" 
         required> 
@@ -114,7 +116,7 @@
 
       <div class="mb-3">
         <label for="location" class="form-label">House Location</label>
-        <p style="color: red;" [hidden]="!(hasError('required','propertylocationControl'))">UserName is required</p>
+       <p style="color: red;" [hidden]="!(hasError('required','propertylocationControl'))">House is required</p>
 
         <input type="text" class="form-control" id="location" formControlName="propertylocationControl" [(ngModel)]="TblVenderPropertyModel.propertylocation"
          required>
@@ -122,7 +124,7 @@
     
       <div class="mb-3">
         <label for="prize" class="form-label">Prize</label>
-        <p style="color: red;" [hidden]="!(hasError('required','propertyPriceControl'))">UserName is required</p>
+      <p style="color: red;" [hidden]="!(hasError('required','propertyPriceControl'))">Prize is required</p>
 
         <input type="text" class="form-control" id="prize" formControlName="propertyPriceControl"  [(ngModel)]="TblVenderPropertyModel.propertyPrice"
         required>
@@ -130,7 +132,7 @@
 
       <div class="mb-3">
         <label for="discount" class="form-label">Discount</label>
-        <p style="color: red;" [hidden]="!(hasError('required','discountControl'))">UserName is required</p>
+       <!---<p style="color: red;" [hidden]="!(hasError('required','discountControl'))">UserName is required</p>-->
 
         <input type="text" class="form-control" id="discount" formControlName="discountControl" [(ngModel)]="TblVenderPropertyModel.discount"
         required>

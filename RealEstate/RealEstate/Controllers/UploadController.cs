@@ -26,6 +26,7 @@ namespace RealEstate.Controllers
                 if (file.Length > 0)
                 {
                     var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    fileName = Path.GetFileNameWithoutExtension(fileName) + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".jpg";
                     var fullPath = Path.Combine(pathToSave, fileName);
                     using (var stream = new FileStream(fullPath, FileMode.Create))
                     {

@@ -64,4 +64,5 @@ public house : any ;
     this._RegisterHouseService.getRequest().subscribe(res => this.house= res, err => console.log(err))
   }
   
+  
 }

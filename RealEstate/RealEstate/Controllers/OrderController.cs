@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RealEstate.Models;
+using RealEstate.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,24 +15,22 @@ namespace RealEstate.Controllers
     {
         RealEstateDbContext db = new RealEstateDbContext();
         [HttpGet]
-        public List<TblOrder> Get()
+        public List<OrderTbl> Get()
         {
-            return db.TblOrders.ToList();
+            return db.OrderTbls.ToList();
         }
-
 
 
         [HttpPost]
-        public string Post([FromBody] TblOrder order)
+        public IActionResult Post([FromBody] OrderTbl order)
         {
 
-            db.TblOrders.Add(order);
+            db.OrderTbls.Add(order);
             db.SaveChanges();
-            return "success";
+            return Ok();
         }
 
-       
-        
+
 
 
     }

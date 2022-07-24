@@ -69,3 +69,11 @@ C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\obj\Release\netcoreapp3.1\R
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\obj\Release\netcoreapp3.1\RealEstate.pdb
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\obj\Release\netcoreapp3.1\RealEstate.genruntimeconfig.cache
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Release\netcoreapp3.1\RealEstate.xml
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Release\netcoreapp3.1\Azure.Core.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Release\netcoreapp3.1\Azure.Storage.Blobs.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Release\netcoreapp3.1\Azure.Storage.Common.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Release\netcoreapp3.1\System.IO.Hashing.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Release\netcoreapp3.1\System.Memory.Data.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Release\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Release\netcoreapp3.1\System.Text.Json.dll

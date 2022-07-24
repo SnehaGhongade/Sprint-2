@@ -8,7 +8,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './services/auth.service';
 import { PropertyComponent } from './property/property.component';
-import { OrderComponent } from './order/order.component';
 import { HouseregisterComponent } from './houseregister/houseregister.component';
 import { AdminComponent } from './admin/admin.component';
 import { VendorComponent } from './vendor/vendor.component';
@@ -18,6 +17,10 @@ import { SseeOrderComponent } from './ssee-order/ssee-order.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent1 } from './home1/home1.component';
+import { MyorderComponent } from './myorder/myorder.component';
+import { MyorderdetailsComponent } from './myorderdetails/myorderdetails.component';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +29,17 @@ import { HomeComponent1 } from './home1/home1.component';
     RegisterComponent,
     HomeComponent1,
     PropertyComponent,
-    OrderComponent,
     HomeComponent,
     HouseregisterComponent,
     VendorComponent,
     AdminComponent,
     FilterPipe,
     SseeOrderComponent,
-    CartComponent
+    CartComponent,
+    MyorderComponent,
+    MyorderdetailsComponent,
+    OrderdetailsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

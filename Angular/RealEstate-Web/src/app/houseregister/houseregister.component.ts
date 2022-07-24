@@ -81,5 +81,6 @@ export class HouseregisterComponent {
     hasError(typeofvalidator: string, controlname: string): Boolean {
         return this.TblVenderPropertyModel.formLoginGroup.controls[controlname].hasError(typeofvalidator);
     }
+    
 
 }

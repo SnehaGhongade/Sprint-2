@@ -55,20 +55,34 @@
             <div class="d-flex justify-content-between p-3 bg-white mb-3 align-items-center"> <span
                     class="font-weight-bold text-uppercase">Luxurious Home</span>
             </div>
-            <div class="container">
-                <div class="row">
-                    <ng-container *ngFor="let product of products">
-                        <div class="card col-md-3">
-                            <img src="{{product.propertyImage}}" alt="">
-                            <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.propertyName}}</h5>
-                            <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.propertyDescription}}</p>
-                            <p><strong>Price:</strong> ${{product.propertyPrice}}</p>
-                            <button class="btn btn-primary" routerLink="login">Add to cart</button>
-                        </div>
-                    </ng-container>
             
-                </div>
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let product of  products">
+            <div class="card col-md-3">
+                <img src="{{product.propertyImage}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.propertyName}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.propertyDescription}}</p>
+                <p><strong>Price:</strong> ${{product.propertyPrice}}</p>
+                <div class="d-flex align-items-center flex-row"> <img src="../../assets/icons/location.png"
+                    width="20"> <span class="guarantee">{{product.propertylocation}}</span> </div>
+                <button class="btn btn-primary"  routerLink="/login">Add to cart</button>
+               
             </div>
+        </ng-container>
+
+    </div>
+</div>
+
+
+
+
             
         </div>
         </div>  
