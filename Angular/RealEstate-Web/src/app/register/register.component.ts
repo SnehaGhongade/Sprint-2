@@ -30,25 +30,43 @@ export class RegisterComponent implements OnInit {
   HideSpinner(){
     this.showSpinner=false;
   }
+  flagVendor(event: any) {
+    if (event.target.value == 'User') {
+      this.registerUserData.isVender = 0;
+    } else {
+      this.registerUserData.isVender = 1;
+    }
+
+  }
   registerUser() {
 
-    if(this.registerUserData.userName==''|| this.registerUserData.password=='' || this.registerUserData.email==''){
-      this.DisplayModalPopup("Error","Please enter the username ,password and Email-ID");
+    if(this.registerUserData.userName==''|| this.registerUserData.password==''){
+      this.DisplayModalPopup("Error","Please enter the username and password");
       return;
     }
     this.ShowSpinner();
     var userDataObject={
       userName:this.registerUserData.userName,
       password:this.registerUserData.password,
-      email:this.registerUserData.email
+      isVender:this.registerUserData.isVender
     }
     this._auth.registerUser(userDataObject).subscribe(res => {
      this.HideSpinner();localStorage.setItem('token',res.token);
-      this._router.navigate(['login'])
-    },
-      err => console.log(err));
+      this._router.navigate([''])
+    console.log(res);
+    if (res.isAdmin)
+           this._router.navigate(['/admin']); 
+
+    else if (res.isVender)
+           this._router.navigate(['/vender']);    
+
+      else 
+      this._router.navigate(['/account']);
+  },
+    err => console.log(err));
   }
-  hasError(typeofvalidator:string,controlname:string):Boolean{
+
+ hasError(typeofvalidator:string,controlname:string):Boolean{
     return this.registerUserData.formLoginGroup.controls[controlname].hasError(typeofvalidator);
   }
 }

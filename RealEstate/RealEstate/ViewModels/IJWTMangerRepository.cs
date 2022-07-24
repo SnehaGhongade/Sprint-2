@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using RealEstate.Interfaces;
+﻿using RealEstate.Interfaces;
 using RealEstate.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -40,23 +40,18 @@ namespace RealEstate.ViewModels
                 TblLogin tblLogin = new TblLogin();
                 tblLogin.UserName = registerViewModel.UserName;
                 tblLogin.Password = registerViewModel.Password;
-                tblLogin.Email = registerViewModel.Email;
-                tblLogin.MobileNumber = registerViewModel.MobileNumber;
                 tblLogin.IsVender = registerViewModel.IsVender;
                 db.TblLogins.Add(tblLogin);
                 db.SaveChanges();
+                _isVender = Convert.ToBoolean(registerViewModel.IsVender);
+
 
             }
             else if (db.TblLogins.Any(x => x.UserName == registerViewModel.UserName && x.Password == registerViewModel.Password))
             {
-               
-             
                 _isVender = db.TblLogins.Any(x => x.UserName == registerViewModel.UserName && x.Password == registerViewModel.Password && x.IsVender == 1);
                 _isAdmin = db.TblLogins.Any(x => x.UserName == registerViewModel.UserName && x.Password == registerViewModel.Password && x.IsAdmin == 1);
-
             }
-
-
             else
             {
                 _isAdmin = db.TblLogins.Any(x => x.UserName == registerViewModel.UserName && x.Password == registerViewModel.Password && x.IsAdmin == 1);

@@ -68,41 +68,55 @@ namespace RealEstate.Models
             {
                 entity.ToTable("TblLogin");
 
-                entity.Property(e => e.Email).HasMaxLength(50);
+                entity.Property(e => e.IsAdmin).HasColumnName("isAdmin");
 
-                entity.Property(e => e.Password).HasMaxLength(50);
+                entity.Property(e => e.IsVender).HasColumnName("isVender");
 
-                entity.Property(e => e.UserName).HasMaxLength(50);
+                entity.Property(e => e.MobileNumber).HasColumnName("MObileNumber");
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<TblProperty>(entity =>
             {
                 entity.ToTable("TblProperty");
 
-                entity.Property(e => e.PropertyDescription).HasMaxLength(50);
+                entity.Property(e => e.PropertyDescription)
+                    .HasMaxLength(500)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PropertyImage).HasMaxLength(50);
+                entity.Property(e => e.PropertyImage)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PropertyName).HasMaxLength(50);
+                entity.Property(e => e.PropertyName)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PropertySize).HasMaxLength(50);
+                entity.Property(e => e.PropertySize)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Propertylocation).HasMaxLength(50);
+                entity.Property(e => e.Propertylocation)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<TblVenderProperty>(entity =>
             {
                 entity.ToTable("TblVenderProperty");
-
-                entity.HasIndex(e => e.Email, "UQ__TblVende__A9D10534B1674876")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.UserName, "UQ__TblVende__C9F28456B8950D85")
-                    .IsUnique();
-
-                entity.Property(e => e.Email)
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
 
                 entity.Property(e => e.PropertyDescription)
                     .HasMaxLength(500)
@@ -124,11 +138,6 @@ namespace RealEstate.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.Propertylocation)
-                    .IsRequired()
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.UserName)
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);

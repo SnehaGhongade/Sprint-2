@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using RealEstate.Interfaces;
+﻿using RealEstate.Interfaces;
 using RealEstate.Models;
 using RealEstate.ViewModels;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +14,7 @@ namespace RealEstate.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+
         RealEstateDbContext db;
         IJWTMangerRepository iJWTMangerRepository;
         public LoginController(RealEstateDbContext _db, IJWTMangerRepository _iJWTMangerRepository)
@@ -41,8 +42,8 @@ namespace RealEstate.Controllers
             LoginViewModel login = new LoginViewModel();
             login.UserName = registerViewModel.UserName;
             login.Password = registerViewModel.Password;
-            login.Email = registerViewModel.Email;
-            login.MobileNumber = registerViewModel.MobileNumber;
+            //login.Email = registerViewModel.Email;
+            //login.MobileNumber = registerViewModel.MobileNumber;
             login.IsVender = registerViewModel.IsVender;
 
             var token = iJWTMangerRepository.Authenicate(login, true);

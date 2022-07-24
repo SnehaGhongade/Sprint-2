@@ -12,16 +12,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HouseregisterComponent {
     constructor(public httpc: HttpClient) { }
-
+    files = [];
+    ngOnInit(): void {
+        this.getHouse();
+    }
     TblVenderPropertyModel: TblVenderProperty = new TblVenderProperty();
     TblVenderPropertyModels: Array<TblVenderProperty> = new Array<TblVenderProperty>();
+    img: any;
 
     registerHouse() {
 
         console.log(this.TblVenderPropertyModel);
         var housedto = {
-            userName: this.TblVenderPropertyModel.userName,
-            email: this.TblVenderPropertyModel.email,
+
             propertyName: this.TblVenderPropertyModel.propertyName,
             propertyDescription: this.TblVenderPropertyModel.propertyDescription,
             propertyImage: this.TblVenderPropertyModel.propertyImage,
@@ -29,11 +32,21 @@ export class HouseregisterComponent {
             propertylocation: this.TblVenderPropertyModel.propertylocation,
             propertyPrice: Number(this.TblVenderPropertyModel.propertyPrice),
             discount: Number(this.TblVenderPropertyModel.discount),
-
         }
+
+      
         this.httpc.post("https://localhost:44338/api/RegisterHouse", housedto).subscribe(res => this.PostSuccess(res), res => this.PostError(res));
+
         this.TblVenderPropertyModel = new TblVenderProperty();
 
+   { 
+     let filetoUpload = <File>this.files[0];
+    const formData = new FormData();
+    formData.append('file', filetoUpload, filetoUpload.name);
+
+    this.httpc.post("https://localhost:44338/api/Upload", housedto).subscribe(res => { console.log(res); this.img = res; housedto.propertyImage = this.img.imageUrl; this.registerHouse(); }, res => console.log(res));}
+        
+    
     }
     PostSuccess(res: any) {
         console.log(res);
@@ -41,6 +54,9 @@ export class HouseregisterComponent {
     }
     PostError(res: any) {
         console.log(res);
+    }
+    onFileChanged(event: any) {
+        this.files = event.target.files;
     }
     DeleteHouse(input: TblVenderProperty) {
         var index = this.TblVenderPropertyModels.indexOf(input);
@@ -56,8 +72,8 @@ export class HouseregisterComponent {
     GetError(input: any) {
         console.log(input);
     }
-    hasError(typeofvalidator:string,controlname:string):Boolean{
+    hasError(typeofvalidator: string, controlname: string): Boolean {
         return this.TblVenderPropertyModel.formLoginGroup.controls[controlname].hasError(typeofvalidator);
-      }
+    }
 
 }

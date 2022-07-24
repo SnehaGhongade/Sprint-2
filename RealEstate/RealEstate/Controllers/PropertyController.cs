@@ -1,13 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using RealEstate.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RealEstate.Models;
+using Microsoft.AspNetCore.Http;
+using RealEstate.ViewModels;
 
 namespace RealEstate.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class PropertyController : ControllerBase
@@ -27,6 +29,27 @@ namespace RealEstate.Controllers
             db.TblProperties.Add(property);
             db.SaveChanges();
             return "success";
+        }
+
+        [HttpPost]
+        [Route("ApproveProperty")]
+        public IActionResult ApproveProperty([FromBody] ApproveViewModel approveViewModel)
+        {
+            var data = db.TblVenderProperties.Where(x => x.Id == approveViewModel.Id).FirstOrDefault();
+            data.IsApproved = 1;
+            db.TblVenderProperties.Update(data);
+            db.SaveChanges();
+            var tblproperty = new TblProperty();
+            tblproperty.PropertyDescription = data.PropertyDescription;
+            tblproperty.PropertyName = data.PropertyName;
+            tblproperty.PropertySize = data.PropertySize;
+            tblproperty.PropertyImage = data.PropertyImage;
+            tblproperty.Propertylocation = data.Propertylocation;
+            tblproperty.PropertyPrice = data.PropertyPrice;
+            tblproperty.Discount = data.Discount;
+            db.TblProperties.Add(tblproperty);
+            db.SaveChanges();
+            return Ok();
         }
         [HttpPut]
         public string Put([FromBody] TblProperty tblpropty)
@@ -57,6 +80,7 @@ namespace RealEstate.Controllers
 
             return "Fail";
         }
+
 
     }
 }

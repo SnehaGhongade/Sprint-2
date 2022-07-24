@@ -7,18 +7,6 @@
         </td>
     </tr>
     <tr>
-        <td>Name of Vender</td>
-        <td>
-            <input [(ngModel)]="TblVenderPropertyModel.userName" type="text">
-        </td>
-    </tr>
-    <tr>
-        <td>Email-id</td>
-        <td>
-            <input [(ngModel)]="TblVenderPropertyModel.email" type="text">
-        </td>
-    </tr>
-    <tr>
         <td>House Description</td>
         <td>
             <textarea  id="exampleFormControlTextarea4"  [(ngModel)]="TblVenderPropertyModel.propertyDescription"rows="3"></textarea>
@@ -26,9 +14,9 @@
         </td>
     </tr>
     <tr>
-        <td>House Image Name</td>
+        <td>Image</td>
         <td>
-            <input type="file"  #file placeholder="Choose file" [(ngModel)]="TblVenderPropertyModel.propertyImage"/>
+            <input type="file" (change)="onFileChanged($event)" #file placeholder="Choose file" [(ngModel)]="TblVenderPropertyModel.propertyImage"/>
         </td>
     </tr>
 
@@ -57,7 +45,6 @@
         </td>
     </tr>
 
-    <input type="button" (click)="getHouse()" value="All Requests" />
     <input type="submit" (click)="registerHouse()" value="send Requests"/>
 
 </table>
@@ -65,22 +52,26 @@
 <table border="2">
     <tr>
         <td>Name of House</td>
-        <td>Name of Vender</td>
-        <td>Email-id</td>
-        <td>size of House</td>
-        <td>House Price</td>
+        <td>House Discription</td>
+        <td>Image</td>
+        <td>Size</td>
+        <td>Location</td>
+        <td>Prize</td>
     </tr>
     <tr *ngFor="let item of TblVenderPropertyModels">
         <td>
             {{item.propertyName}}
         </td>
         <td>
-            {{item.userName}}
+            {{item.propertyDescription}}
         </td>
         <td>
-            {{item.email}}
+            <img src="{{item.propertyImage}}" height="10%" width="10%"/>
         </td>
+       
         <td> {{item.propertySize}}
+        </td>
+        <td> {{item.propertylocation}}
         </td>
         <td> {{item.propertyPrice}}
         </td>

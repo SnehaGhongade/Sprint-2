@@ -8,4 +8,5 @@ export class TblProperty{
     propertylocation:string='';
     propertyPrice:number=0;
     discount:number=0;
+    isApproved:Number=0;
 }

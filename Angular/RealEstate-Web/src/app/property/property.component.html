@@ -1,98 +1,47 @@
-<a class="nav-link"  routerLink="/admin">Go Back</a>
-<table>
-    <tr>
-        <td>Name of House</td>
-        <td>
-            <input [(ngModel)]="TblPropertyModel.propertyName" type="text">
-        </td>
-    </tr>
-    <tr>
-        <td>Name of vender</td>
-        <td>
-            <input [(ngModel)]="TblPropertyModel.userName" type="text">
-        </td>
-    </tr>
-    <tr>
-        <td>House Description</td>
-        <td>
-            <textarea  id="exampleFormControlTextarea4"  [(ngModel)]="TblPropertyModel.propertyImage" rows="3"></textarea>
 
-        </td>
-    </tr>
-    <tr>
-        <td>House Image Name</td>
-        <td>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sr.No</th>
+        <th scope="col">House Name</th>
+        <th scope="col">House Discription</th>
+        <th scope="col">Image</th>
+        <th scope="col">Size</th>
+        <th scope="col">Location</th>
+        <th scope="col">House Prize</th>
+        <th scope="col">Discount</th>
+        <th scope="col">Action</th>
 
-            <input type="file"  #file placeholder="Choose file" [(ngModel)]="TblPropertyModel.propertyImage" />
-
-        </td>
-    </tr>
-
-    <tr>
-        <td>size of House</td>
-        <td>
-            <input [(ngModel)]="TblPropertyModel.propertySize" type="text">
-        </td>
-    </tr>
-    <tr>
-        <td>House Location</td>
-        <td>
-            <input [(ngModel)]="TblPropertyModel.propertylocation" type="text">
-        </td>
-    </tr>
-    <tr>
-        <td>House Price</td>
-        <td>
-            <input [(ngModel)]="TblPropertyModel.propertyPrice" type="text">
-        </td>
-    </tr>
-    <tr>
-        <td>Discount</td>
-        <td>
-            <input [(ngModel)]="TblPropertyModel.discount" type="text">
-        </td>
-    </tr>
-   <!--  <input type="button" (click)="getData()" value="Check Requets"/> -->
-    <input type="submit" (click)="AddProperty()" value="Approve">
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <tr *ngFor="let item of  house;let i = index">
+            <td>{{i+1}}</td>
+            <td>
+                {{item.propertyName}}
+            </td>
+           
+            <td> {{item.propertyDescription}}
+            </td>
+            <td> {{item.propertyImage}}
+            </td>
+            <td> {{item.propertySize}}
+            </td>
+            <td> {{item.propertylocation}}
+            </td>
+            <td> {{item.propertyPrice}}
+            </td>
+            <td> {{item.discount}}
+            </td>
+            
+            <td>
+                <input type="button"  [hidden]="(item.isApproved==1)?true:false" value="Add"  (click)="AddProperty(item)" value="Approve"/>
+                <label [hidden]="(item.isApproved==1)?false:true" class="btn btn-success" >Approved</label>
+            </td>
+        </tr>
     
-</table>
+    </tbody>
+  </table>
 
-<table border="2">
-    <tr>
-        <td>Name of House</td>
-        <td>Name of vender</td>
-        <td>House Description</td>
-        <td>House Image Name</td>
-        <td>size of House</td>
-        <td>House Location</td>
-        <td>House Price</td>
-        <td>Discount</td>
-        <td>Actions</td>
-    </tr>
-    <tr *ngFor="let item of  house">
-        <td>
-            {{item.propertyName}}
-        </td>
-        <td>
-            {{item.userName}}
-        </td>
-        <td> {{item.propertyDescription}}
-        </td>
-        <td> {{item.propertyImage}}
-        </td>
-        <td> {{item.propertySize}}
-        </td>
-        <td> {{item.propertylocation}}
-        </td>
-        <td> {{item.propertyPrice}}
-        </td>
-        <td> {{item.discount}}
-        </td>
-        
-        <td>
-            <input type="button" value="Add" (click)="Add(item)" />
-            <input type="button" value="Delete" (click)="DeleteProperty(item)"/>
 
-        </td>
-    </tr>
-</table>

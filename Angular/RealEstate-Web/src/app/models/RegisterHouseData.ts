@@ -4,8 +4,7 @@ import {NgForm,FormGroup,Validators,FormBuilder,FormControl} from '@angular/form
 
 export class TblVenderProperty{
     id:number=0;
-    userName:string='';
-    email:string='';
+   
     propertyName:string='';
     propertyDescription:string='';
     propertyImage:string='';
@@ -18,8 +17,7 @@ export class TblVenderProperty{
     constructor(){
         var _builder=new FormBuilder();
         this.formLoginGroup=_builder.group({});
-        this.formLoginGroup.addControl("UserNameControl",new FormControl('',Validators.required));
-        this.formLoginGroup.addControl("email",new FormControl('',Validators.required));
+       
         this.formLoginGroup.addControl("propertyName",new FormControl('',Validators.required));
         this.formLoginGroup.addControl("propertyDescription",new FormControl('',Validators.required));
         this.formLoginGroup.addControl("propertyImage",new FormControl('',Validators.required));
