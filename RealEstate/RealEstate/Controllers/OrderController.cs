@@ -10,23 +10,29 @@ namespace RealEstate.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class orderbooking : ControllerBase
+    public class OrderController : ControllerBase
     {
         RealEstateDbContext db = new RealEstateDbContext();
         [HttpGet]
-        public List<Orderbooking> Get()
+        public List<TblOrder> Get()
         {
-            return db.Orderbookings.ToList();
+            return db.TblOrders.ToList();
         }
+
 
 
         [HttpPost]
-        public string Post([FromBody] Orderbooking order)
+        public string Post([FromBody] TblOrder order)
         {
 
-            db.Orderbookings.Add(order);
+            db.TblOrders.Add(order);
             db.SaveChanges();
             return "success";
         }
+
+       
+        
+
+
     }
 }

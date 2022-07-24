@@ -17,8 +17,8 @@ namespace RealEstate.Models
         {
         }
 
-        public virtual DbSet<Orderbooking> Orderbookings { get; set; }
         public virtual DbSet<TblLogin> TblLogins { get; set; }
+        public virtual DbSet<TblOrder> TblOrders { get; set; }
         public virtual DbSet<TblProperty> TblProperties { get; set; }
         public virtual DbSet<TblVenderProperty> TblVenderProperties { get; set; }
 
@@ -34,35 +34,6 @@ namespace RealEstate.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
-
-            modelBuilder.Entity<Orderbooking>(entity =>
-            {
-                entity.ToTable("orderbooking");
-
-                entity.Property(e => e.Address)
-                    .HasMaxLength(50)
-                    .HasColumnName("address");
-
-                entity.Property(e => e.Country)
-                    .HasMaxLength(50)
-                    .HasColumnName("country");
-
-                entity.Property(e => e.Email)
-                    .HasMaxLength(50)
-                    .HasColumnName("email");
-
-                entity.Property(e => e.Firstname)
-                    .HasMaxLength(50)
-                    .HasColumnName("firstname");
-
-                entity.Property(e => e.Lastname)
-                    .HasMaxLength(50)
-                    .HasColumnName("lastname");
-
-                entity.Property(e => e.State)
-                    .HasMaxLength(50)
-                    .HasColumnName("state");
-            });
 
             modelBuilder.Entity<TblLogin>(entity =>
             {
@@ -83,6 +54,41 @@ namespace RealEstate.Models
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<TblOrder>(entity =>
+            {
+                entity.HasKey(e => e.OrderId)
+                    .HasName("PK__TblOrder__C3905BCF9910615C");
+
+                entity.ToTable("TblOrder");
+
+                entity.Property(e => e.Address)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FullName)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PropertyImage)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.VenderName)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.VendorUserName).HasMaxLength(50);
             });
 
             modelBuilder.Entity<TblProperty>(entity =>

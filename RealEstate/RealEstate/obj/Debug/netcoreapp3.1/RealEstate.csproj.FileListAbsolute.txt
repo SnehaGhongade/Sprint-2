@@ -13,8 +13,12 @@ C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Rea
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\RealEstate.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\RealEstate.pdb
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\RealEstate.xml
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Azure.Core.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Azure.Storage.Blobs.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Azure.Storage.Common.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -46,8 +50,12 @@ C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Sys
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.IO.Hashing.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Memory.Data.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -69,11 +77,3 @@ C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\obj\Debug\netcoreapp3.1\Rea
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\obj\Debug\netcoreapp3.1\RealEstate.pdb
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\obj\Debug\netcoreapp3.1\RealEstate.genruntimeconfig.cache
 C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\obj\Debug\netcoreapp3.1\RealEstate.csproj.AssemblyReference.cache
-C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Azure.Core.dll
-C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Azure.Storage.Blobs.dll
-C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Azure.Storage.Common.dll
-C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.IO.Hashing.dll
-C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Memory.Data.dll
-C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
-C:\Users\Sneha\Desktop\Sprint2\RealEstate\RealEstate\bin\Debug\netcoreapp3.1\System.Text.Json.dll

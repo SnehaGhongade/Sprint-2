@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
            this._router.navigate(['/admin']); 
 
     else if (res.isVender)
-           this._router.navigate(['/vender']);    
+           this._router.navigate(['/vendor']);    
 
       else 
       this._router.navigate(['/account']);

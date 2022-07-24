@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 export class HouseregisterComponent {
     constructor(public httpc: HttpClient) { }
     files = [];
+    isEdit=false;
     ngOnInit(): void {
         this.getHouse();
     }
@@ -33,24 +34,26 @@ export class HouseregisterComponent {
             propertyPrice: Number(this.TblVenderPropertyModel.propertyPrice),
             discount: Number(this.TblVenderPropertyModel.discount),
         }
-
-      
-        this.httpc.post("https://localhost:44338/api/RegisterHouse", housedto).subscribe(res => this.PostSuccess(res), res => this.PostError(res));
-
-        this.TblVenderPropertyModel = new TblVenderProperty();
-
+        if(this.isEdit)
         {
-            let filetoUpload=<File>this.files[0];
-            const formData=new FormData();
-            formData.append('file',filetoUpload,filetoUpload.name)
-            this.httpc.post("https://localhost:44338/api/Upload",formData).subscribe(res=>{console.log(res); this.img=res;housedto.propertyImage=this.img.imageUrl;this.registerHouse();},res=>console.log(res));
-           
-            }
-        
-
-   
-    
+          this.httpc.put("https://localhost:44338/api/RegisterHouse", housedto).subscribe(res => this.PostSuccess(res), res => this.PostError(res));
+        }
+        else
+    {
+        let filetoUpload=<File>this.files[0];
+        const formData=new FormData();
+        formData.append('file',filetoUpload,filetoUpload.name)
+        this.httpc.post("https://localhost:44338/api/Upload",formData).subscribe(res=>{console.log(res); this.img=res;housedto.propertyImage=this.img.imageUrl;this.AddProperties(housedto);},res=>console.log(res));
     }
+    
+    this.TblVenderPropertyModel = new TblVenderProperty();
+      }
+      AddProperties(housedto:any)
+      {
+        this.httpc.post("https://localhost:44338/api/RegisterHouse", housedto).subscribe(res => this.PostSuccess(res), res => this.PostError(res));
+      }
+
+
     PostSuccess(res: any) {
         console.log(res);
 

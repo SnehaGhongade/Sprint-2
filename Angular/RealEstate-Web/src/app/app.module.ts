@@ -12,19 +12,19 @@ import { OrderComponent } from './order/order.component';
 import { HouseregisterComponent } from './houseregister/houseregister.component';
 import { AdminComponent } from './admin/admin.component';
 import { VendorComponent } from './vendor/vendor.component';
-import { Home1Component } from './home1/home1.component';
 import { HomeComponent } from './account/home.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { SseeOrderComponent } from './ssee-order/ssee-order.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { CartComponent } from './cart/cart.component';
+import { HomeComponent1 } from './home1/home1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    Home1Component,
+    HomeComponent1,
     PropertyComponent,
     OrderComponent,
     HomeComponent,

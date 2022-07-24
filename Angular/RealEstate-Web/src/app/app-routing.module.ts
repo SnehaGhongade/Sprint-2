@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './account/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { CartComponent } from './cart/cart.component';
-import { Home1Component } from './home1/home1.component';
+import { HomeComponent1 } from './home1/home1.component';
 import { HouseregisterComponent } from './houseregister/houseregister.component';
 import { LoginComponent } from './login/login.component';
 import { OrderComponent } from './order/order.component';
@@ -16,7 +16,7 @@ const routes: Routes = [
 
   {
     path: '',
-    component: Home1Component
+    component: HomeComponent1
   },
   {
     path: 'account',
@@ -25,7 +25,7 @@ const routes: Routes = [
   
   {
     path: 'home1',
-    component:Home1Component
+    component:HomeComponent1
   },
 
   {
