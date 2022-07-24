@@ -39,13 +39,16 @@ export class HouseregisterComponent {
 
         this.TblVenderPropertyModel = new TblVenderProperty();
 
-   { 
-     let filetoUpload = <File>this.files[0];
-    const formData = new FormData();
-    formData.append('file', filetoUpload, filetoUpload.name);
-
-    this.httpc.post("https://localhost:44338/api/Upload", housedto).subscribe(res => { console.log(res); this.img = res; housedto.propertyImage = this.img.imageUrl; this.registerHouse(); }, res => console.log(res));}
+        {
+            let filetoUpload=<File>this.files[0];
+            const formData=new FormData();
+            formData.append('file',filetoUpload,filetoUpload.name)
+            this.httpc.post("https://localhost:44338/api/Upload",formData).subscribe(res=>{console.log(res); this.img=res;housedto.propertyImage=this.img.imageUrl;this.registerHouse();},res=>console.log(res));
+           
+            }
         
+
+   
     
     }
     PostSuccess(res: any) {

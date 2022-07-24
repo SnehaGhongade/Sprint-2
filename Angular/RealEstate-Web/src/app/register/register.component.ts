@@ -63,7 +63,9 @@ export class RegisterComponent implements OnInit {
       else 
       this._router.navigate(['/account']);
   },
-    err => console.log(err));
+    err => {this.HideSpinner();console.log(err)});
+
+
   }
 
  hasError(typeofvalidator:string,controlname:string):Boolean{

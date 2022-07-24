@@ -7,7 +7,7 @@
                 <label for="registerUsername" class="form-label">UserName</label>
                  <p style="color: red;" [hidden]="!(hasError('required','UserNameControl'))">UserName is required</p>
                 <input type="text" class="form-control"  formControlName="UserNameControl" name="registerUsername" id="registerUsername" [(ngModel)]="registerUserData.userName" 
-                [ngModelOptions]="{standalone: true}" required />
+                required />
 
           </div>
 
@@ -16,7 +16,7 @@
                 <p style="color: red;" [hidden]="!(hasError('required','PasswordControl'))">Password is required</p>
 
                 <input type="password"  class="form-control"  formControlName="PasswordControl" name="loginPassword" id="loginPassword" [(ngModel)]="registerUserData.password"
-                [ngModelOptions]="{standalone: true}" required/>
+                required/>
 
             </div>
             

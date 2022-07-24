@@ -18,13 +18,13 @@ export class TblVenderProperty{
         var _builder=new FormBuilder();
         this.formLoginGroup=_builder.group({});
        
-        this.formLoginGroup.addControl("propertyName",new FormControl('',Validators.required));
-        this.formLoginGroup.addControl("propertyDescription",new FormControl('',Validators.required));
-        this.formLoginGroup.addControl("propertyImage",new FormControl('',Validators.required));
-        this.formLoginGroup.addControl("propertySize",new FormControl('',Validators.required));
-        this.formLoginGroup.addControl("propertylocation",new FormControl('',Validators.required));
-        this.formLoginGroup.addControl("propertyPrice",new FormControl('',Validators.required));
-        this.formLoginGroup.addControl("discount",new FormControl('',Validators.required));
+        this.formLoginGroup.addControl("propertyNameControl",new FormControl('',Validators.required));
+        this.formLoginGroup.addControl("propertyDescriptionControl",new FormControl('',Validators.required));
+        this.formLoginGroup.addControl("propertyImageControl",new FormControl('',Validators.required));
+        this.formLoginGroup.addControl("propertySizeControl",new FormControl('',Validators.required));
+        this.formLoginGroup.addControl("propertylocationControl",new FormControl('',Validators.required));
+        this.formLoginGroup.addControl("propertyPriceControl",new FormControl('',Validators.required));
+        this.formLoginGroup.addControl("discountControl",new FormControl('',Validators.required));
 
 
 }}

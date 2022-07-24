@@ -1,4 +1,4 @@
-<table>
+<!--<table>
 
     <tr>
         <td>Name of House</td>
@@ -66,7 +66,7 @@
             {{item.propertyDescription}}
         </td>
         <td>
-            <img src="{{item.propertyImage}}" height="10%" width="10%"/>
+            <img src="{{item.propertyImage}}" height="20%" width="10%"/>
         </td>
        
         <td> {{item.propertySize}}
@@ -77,4 +77,109 @@
         </td>
 
     </tr>
-</table>
+</table>-->
+
+<form action="" [formGroup]="TblVenderPropertyModel.formLoginGroup"class="form">
+    <div class="mb-3">
+      <label for="housename" class="form-label">House Name</label>
+      <p style="color: red;" [hidden]="!(hasError('required','propertyNameControl'))">UserName is required</p>
+
+      <input type="text" class="form-control"formControlName="propertyNameControl" id="housename" [(ngModel)]="TblVenderPropertyModel.propertyName"
+       required>
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+
+    <div class="mb-3">
+      <label for="Discription" class="form-label">House Discription</label>
+      <p style="color: red;" [hidden]="!(hasError('required','propertyDescriptionControl'))">House Discription is required</p>
+
+      <textarea type="text" class="form-control"formControlName="propertyDescriptionControl" id="Discription"  [(ngModel)]="TblVenderPropertyModel.propertyDescription"
+       required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="Image" class="form-label">Image</label>
+
+        <input type="file" class="form-control" id="Image" (change)="onFileChanged($event)" #file placeholder="Choose file" [(ngModel)]="TblVenderPropertyModel.propertyImage"
+        [ngModelOptions]="{standalone: true}" required/>
+    </div>
+
+    <div class="mb-3">
+        <label for="size" class="form-label">Size</label>
+        <p style="color: red;" [hidden]="!(hasError('required','propertySizeControl'))">Size is required</p>
+
+        <input type="text" class="form-control" formControlName="propertySizeControl"id="size" [(ngModel)]="TblVenderPropertyModel.propertySize" 
+        required> 
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">House Location</label>
+        <p style="color: red;" [hidden]="!(hasError('required','propertylocationControl'))">UserName is required</p>
+
+        <input type="text" class="form-control" id="location" formControlName="propertylocationControl" [(ngModel)]="TblVenderPropertyModel.propertylocation"
+         required>
+      </div>
+    
+      <div class="mb-3">
+        <label for="prize" class="form-label">Prize</label>
+        <p style="color: red;" [hidden]="!(hasError('required','propertyPriceControl'))">UserName is required</p>
+
+        <input type="text" class="form-control" id="prize" formControlName="propertyPriceControl"  [(ngModel)]="TblVenderPropertyModel.propertyPrice"
+        required>
+      </div>
+
+      <div class="mb-3">
+        <label for="discount" class="form-label">Discount</label>
+        <p style="color: red;" [hidden]="!(hasError('required','discountControl'))">UserName is required</p>
+
+        <input type="text" class="form-control" id="discount" formControlName="discountControl" [(ngModel)]="TblVenderPropertyModel.discount"
+        required>
+      </div>
+      
+    
+    <button type="submit" (click)="registerHouse()" value="send Requests" class="btn btn-primary">Send Request</button>
+  </form>
+
+
+  
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sr.No</th>
+        <th scope="col">House Name</th>
+        <th scope="col">House Discription</th>
+        <th scope="col">Image</th>
+        <th scope="col">Size</th>
+        <th scope="col">Location</th>
+        <th scope="col">House Prize</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <tr *ngFor="let item of TblVenderPropertyModels ;let i = index">
+            <td>{{i+1}}</td>
+            <td>
+                {{item.propertyName}}
+            </td>
+           
+            <td> {{item.propertyDescription}}
+            </td>
+            <td>
+                <img src="{{item.propertyImage}}" height="20%" width="10%"/>
+             </td>
+            <td> {{item.propertySize}}
+            </td>
+            <td> {{item.propertylocation}}
+            </td>
+            <td> {{item.propertyPrice}}
+            </td>
+           
+           
+        </tr>
+    
+    </tbody>
+  </table>
+
+
